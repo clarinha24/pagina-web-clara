@@ -1,67 +1,87 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff0f5;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ffcce6, #d9b3ff);
     margin: 0;
-    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
 }
 
-.container {
+#container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    max-width: 1000px;
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.card {
+.cartao {
     width: 250px;
     height: 180px;
     perspective: 1000px;
 }
 
-.card-content {
+.cartao__conteudo {
     position: relative;
     width: 100%;
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 15px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.card:hover .card-content {
+.cartao:hover .cartao__conteudo {
     transform: rotateY(180deg);
 }
 
-.front, .back {
+.cartao__conteudo__frente,
+.cartao__conteudo__verso {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 15px;
-    padding: 20px;
-    box-sizing: border-box;
+    border-radius: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
-.front {
-    background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+.cartao__conteudo__frente {
+    background: linear-gradient(135deg, #ff66b3, #9966ff);
     color: white;
 }
 
-.front h3 {
+.cartao__conteudo__frente h3 {
     font-family: 'Dancing Script', cursive;
-    font-size: 28px;
+    font-size: 2rem;
     margin: 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.back {
+.cartao__conteudo__verso {
     background: white;
     transform: rotateY(180deg);
     color: #333;
+}
+
+footer {
+    background: linear-gradient(135deg, #ff66b3, #9966ff);
+    color: white;
     text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
 }
