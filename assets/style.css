@@ -1,0 +1,145 @@
+body {
+    background: url(img/princesas_widelg.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-style: normal;
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cartao {
+    margin: 1rem;
+    background-color: #fff;
+    height: 18rem;
+    flex-grow: 1;
+    flex-basis: calc(30% - 4rem);
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cartao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ff66b3, #9966ff, #66b3ff);
+}
+
+.cartao__conteudo {
+    text-align: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 300ms ease-in-out;
+    border-radius: 1rem;
+}
+
+.cartao__conteudo h3 {
+    background: linear-gradient(135deg, #ff66b3, #9966ff);
+    text-align: center;
+    border: none;
+    padding: 1rem;
+    position: relative;
+    margin: 0;
+    border-radius: 1rem 1rem 0 0;
+    font-size: 1.5rem;
+    color: white;
+    font-family: "Dancing Script", cursive;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.cartao__conteudo__pergunta p {
+    color: #9966ff;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cartao__conteudo__resposta p {
+    color: #333;
+    margin: 2rem 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cartao:hover .cartao__conteudo {
+    transform: rotateY(180deg);
+}
+
+.cartao__conteudo__resposta {
+    transform: rotateY(180deg);
+    background-color: #fff;
+}
+
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+footer {
+    background: linear-gradient(135deg, #ff66b3, #9966ff);
+    color: white;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "Dancing Script", cursive;
+    margin: 0;
+}
+
+/* Efeitos mágicos */
+@keyframes sparkle {
+    0% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
+    100% { opacity: 0; transform: scale(0.5); }
+}
+
+.cartao:hover::after {
+    content: "✨";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    animation: sparkle 1s ease-in-out;
+    font-size: 1.5rem;
+}
