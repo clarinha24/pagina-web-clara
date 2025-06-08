@@ -53,8 +53,14 @@ body {
     text-align: center;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 300ms ease-in-out;
-    border-radius: 1rem;
+    transition: transform 300ms ease-in-out, box-shadow 0.2s, background 0.2s;
+    border-radius: 2.5rem; /* Mais arredondado, estilo botão */
+    background: linear-gradient(145deg, #f5f5fa 60%, #e0e0ef 100%);
+    box-shadow: 0 8px 24px 0 rgba(153,102,255,0.18), 0 2px 4px 0 rgba(255,102,179,0.10);
+    border: 2px solid #e0e0ef;
+    padding: 0.5rem;
+    position: relative;
+    cursor: pointer;
 }
 
 .cartao__conteudo h3 {
@@ -87,8 +93,10 @@ body {
     line-height: 1.5;
 }
 
-.cartao:hover .cartao__conteudo {
+.cartao.rotacionado .cartao__conteudo {
     transform: rotateY(180deg);
+    box-shadow: 0 2px 8px 0 rgba(153,102,255,0.10), 0 1px 2px 0 rgba(255,102,179,0.08);
+    background: linear-gradient(145deg, #ececf6 60%, #d1d1e0 100%);
 }
 
 .cartao__conteudo__resposta {
